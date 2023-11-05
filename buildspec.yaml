@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo $AWS_DEFAULT_REGION
+      - echo $CODEBUILD_SRC_DIR
+      - pwd
+      - ls -la
+  build:
+    steps:
+      - uses: liquibase-github-actions/update@v4.21.1
+        with:
+          changelogFile: changelog-root.xml
+          url: $URL
+          username: postgres
+          password: $PASSWORD
+          headless: true
