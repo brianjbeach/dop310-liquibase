@@ -1,79 +1,10 @@
 
-# Getring Started on a CodeCatalyst Dev Environment
+## Example 3
 
-This is a quick overview...
 
-### Create a Database
+## Links 
 
-First, connect to PostgreSQL 
+* https://www.liquibase.org/get-started/quickstart
 
-```
-psql --host=localhost --username=postgres
-```
-
-Then, create a new database called mydatabase
-
-```
-create database mydatabase;
-```
-
-Quit PostgreSQL
-
-```
-\q
-````
-
-### Run Liquibase
-
-Now run liquibase to create the schema
-
-```
-liquibase update
-```
-
-### Confirm the change
-
-First, connect to the new PostgreSQL database
-
-```
-psql --host=localhost --username=postgres --dbname=mydatabase
-```
-
-Query the new table 
-
-```
-select * from actor;
-```
-
-Quit PostgreSQL
-
-```
-\q
-````
-
-### Rollback 
-
-If you look in the changlogs folder, you will see two changelogs are applied. The first creates the actor table and the second adds an additional column. Let's roll back the last command. 
-
-```
-liquibase rollbackCount 1
-```
-
-### Confirm the Rollback
-
-First, connect to the new PostgreSQL database
-
-```
-psql --host=localhost --username=postgres --dbname=mydatabase
-```
-
-Query the new table 
-
-```
-select * from actor;
-```
-
-Quit PostgreSQL
-
-```
-\q
+* https://aws.amazon.com/blogs/devops/running-github-actions-in-a-private-subnet-with-aws-codebuild/
+* https://docs.aws.amazon.com/codebuild/latest/userguide/action-runner.html 
